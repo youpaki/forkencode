@@ -1,0 +1,112 @@
+[data-component="branch-graph"] {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 0.5px solid var(--border-weak-base);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+[data-slot="branch-graph-header"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  background: var(--surface-base);
+  border-bottom: 0.5px solid var(--border-weak-base);
+}
+
+[data-slot="branch-graph-title"] {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-tiny);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+[data-slot="branch-graph-count"] {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-tiny);
+  color: var(--text-subtle);
+}
+
+[data-slot="branch-graph-tree"] {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0;
+}
+
+[data-component="graph-node"] {
+  display: flex;
+  flex-direction: column;
+}
+
+[data-slot="graph-node-row"] {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-tiny);
+  transition: background 0.1s ease;
+}
+
+[data-slot="graph-node-row"]:hover {
+  background: var(--surface-hover-base);
+}
+
+[data-slot="graph-node-row"][data-active="true"] {
+  background: var(--surface-selected-base);
+}
+
+[data-slot="graph-node-row"][data-merge="true"] {
+  opacity: 0.7;
+}
+
+[data-slot="graph-node-connector"] {
+  color: var(--text-subtle);
+  flex-shrink: 0;
+  font-size: 11px;
+  min-width: 20px;
+  text-align: center;
+}
+
+[data-slot="graph-node-dot"] {
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+[data-slot="graph-node-purpose"] {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-base);
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[data-slot="graph-node-merge-badge"] {
+  font-family: var(--font-family-sans);
+  font-size: 10px;
+  color: var(--icon-success-base);
+  background: color-mix(in srgb, var(--icon-success-base) 15%, transparent);
+  padding: 0 5px;
+  border-radius: var(--radius-xs);
+  flex-shrink: 0;
+}
+
+[data-slot="graph-node-confidence"] {
+  font-family: var(--font-family-sans);
+  font-size: 10px;
+  color: var(--text-subtle);
+  flex-shrink: 0;
+}

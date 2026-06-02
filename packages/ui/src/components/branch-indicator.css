@@ -1,0 +1,40 @@
+[data-component="branch-indicator"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-md);
+  background: var(--surface-raised-base);
+  border: 0.5px solid var(--border-weak-base);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease;
+}
+
+[data-component="branch-indicator"]:hover {
+  background: var(--surface-hover-base);
+}
+
+[data-slot="branch-indicator-dot"] {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+[data-slot="branch-indicator-name"] {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-base);
+  line-height: var(--line-height-large);
+}
+
+[data-slot="branch-indicator-count"] {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-tiny);
+  color: var(--text-subtle);
+  background: var(--surface-base);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+}

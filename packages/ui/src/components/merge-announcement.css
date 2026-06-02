@@ -1,0 +1,91 @@
+[data-component="merge-announcement"] {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: var(--surface-raised-base);
+  border: 1px solid var(--border-interactive-base);
+  border-left: 3px solid var(--icon-interactive-base);
+  margin: 4px 0;
+}
+
+[data-slot="merge-announcement-header"] {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+[data-slot="merge-announcement-icon"] {
+  font-size: 16px;
+}
+
+[data-slot="merge-announcement-title"] {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-interactive-base);
+}
+
+[data-slot="merge-announcement-sources"] {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 12px;
+  border-left: 1px solid var(--border-weak-base);
+}
+
+[data-slot="merge-announcement-source"] {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+[data-slot="merge-announcement-source-name"] {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-base);
+}
+
+[data-slot="merge-announcement-source-summary"] {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-tiny);
+  color: var(--text-subtle);
+}
+
+[data-slot="merge-announcement-resolution"] {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 10px;
+  background: var(--surface-base);
+  border-radius: var(--radius-sm);
+}
+
+[data-slot="merge-announcement-resolution-label"] {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-tiny);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+[data-slot="merge-announcement-resolution-text"] {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-small);
+  color: var(--text-base);
+  line-height: var(--line-height-large);
+}
+
+[data-slot="merge-announcement-footer"] {
+  display: flex;
+  justify-content: flex-end;
+}
+
+[data-slot="merge-announcement-confidence"] {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-tiny);
+  color: var(--text-subtle);
+}

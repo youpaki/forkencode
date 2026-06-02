@@ -1,0 +1,93 @@
+[data-component="branch-inspector"] {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-base);
+  border-left: 0.5px solid var(--border-weak-base);
+  width: 280px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+[data-slot="branch-inspector-empty"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-small);
+  color: var(--text-subtle);
+}
+
+[data-slot="branch-inspector-header"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 0.5px solid var(--border-weak-base);
+}
+
+[data-slot="branch-inspector-title"] {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-base);
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[data-slot="branch-inspector-close"] {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-subtle);
+  font-size: var(--font-size-normal);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+[data-slot="branch-inspector-close"]:hover {
+  background: var(--surface-hover-base);
+}
+
+[data-slot="branch-inspector-body"] {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 8px 0;
+}
+
+[data-slot="branch-inspector-field"] {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 14px;
+}
+
+[data-slot="branch-inspector-label"] {
+  font-family: var(--font-family-sans);
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+[data-slot="branch-inspector-value"] {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-small);
+  color: var(--text-base);
+  line-height: var(--line-height-large);
+}
+
+[data-slot="branch-inspector-value"][data-mono="true"] {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-tiny);
+}
+
+[data-slot="branch-inspector-value"][data-multiline="true"] {
+  white-space: pre-wrap;
+  word-break: break-word;
+}

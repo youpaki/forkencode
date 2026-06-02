@@ -1,0 +1,102 @@
+[data-component="branch-list"] {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 0.5px solid var(--border-weak-base);
+  border-bottom: 0.5px solid var(--border-weak-base);
+}
+
+[data-slot="branch-list-header"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+}
+
+[data-slot="branch-list-title"] {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-tiny);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+[data-slot="branch-list-count"] {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-tiny);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-subtle);
+  background: var(--surface-base);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+}
+
+[data-slot="branch-list-items"] {
+  display: flex;
+  flex-direction: column;
+}
+
+[data-component="branch-row"] {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: background 0.1s ease;
+}
+
+[data-component="branch-row"]:hover {
+  background: var(--surface-hover-base);
+}
+
+[data-component="branch-row"][data-active="true"] {
+  background: var(--surface-selected-base);
+}
+
+[data-slot="branch-row-dot"] {
+  font-size: 10px;
+  flex-shrink: 0;
+  width: 12px;
+  text-align: center;
+}
+
+[data-slot="branch-row-content"] {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  flex: 1;
+}
+
+[data-slot="branch-row-purpose"] {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-base);
+  line-height: var(--line-height-large);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[data-slot="branch-row-meta"] {
+  display: flex;
+  gap: 8px;
+}
+
+[data-slot="branch-row-messages"] {
+  font-family: var(--font-family-sans);
+  font-size: 11px;
+  color: var(--text-subtle);
+}
+
+[data-slot="branch-row-confidence"] {
+  font-family: var(--font-family-sans);
+  font-size: 11px;
+  color: var(--text-subtle);
+}
