@@ -618,3 +618,5 @@ export const layer = Layer.effect(
     return svc
   }),
 )
+
+export const defaultLayer = layer.pipe(Layer.provide(Database.defaultLayer))

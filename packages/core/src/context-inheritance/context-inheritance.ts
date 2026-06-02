@@ -147,3 +147,5 @@ export const layer = Layer.effect(
     })
   }),
 )
+
+export const defaultLayer = layer.pipe(Layer.provide(BranchManager.defaultLayer), Layer.provide(Database.defaultLayer))
