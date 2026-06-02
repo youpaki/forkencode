@@ -44,8 +44,18 @@ export const ForkTool = Tool.define(
       parameters: Parameters,
       execute(params: Schema.Schema.Type<typeof Parameters>, ctx: Tool.Context) {
         return Effect.gen(function* () {
-          const branchManager = Option.getOrThrow(branchManagerOpt)
-          const contextEngine = Option.getOrThrow(contextEngineOpt)
+          if (Option.isNone(branchManagerOpt) || Option.isNone(contextEngineOpt)) {
+            return {
+              title: "Fork unavailable",
+              metadata: {
+                branchID: "unavailable" as BranchID,
+                conversationID: "unavailable" as ConversationID,
+              },
+              output: "Forking is not available — the conversation graph services are not loaded. Ensure BranchManager and ContextInheritanceEngine are provided in the application layer.",
+            } satisfies Tool.ExecuteResult
+          }
+          const branchManager = branchManagerOpt.value
+          const contextEngine = contextEngineOpt.value
 
           yield* ctx.ask({
             permission: id,

@@ -56,6 +56,8 @@ import { memoMap } from "@forkencode/core/effect/memo-map"
 import { BackgroundJob } from "@/background/job"
 import { RuntimeFlags } from "@/effect/runtime-flags"
 import { EventV2Bridge } from "@/event-v2-bridge"
+import { BranchManager } from "@forkencode/core/branch/branch"
+import { ContextInheritanceEngine } from "@forkencode/core/context-inheritance/context-inheritance"
 
 export const AppLayer = Layer.mergeAll(
   Npm.defaultLayer,
@@ -98,6 +100,8 @@ export const AppLayer = Layer.mergeAll(
   McpAuth.defaultLayer,
   Command.defaultLayer,
   Truncate.defaultLayer,
+  BranchManager.defaultLayer,
+  ContextInheritanceEngine.defaultLayer,
   ToolRegistry.defaultLayer,
   Format.defaultLayer,
   Project.defaultLayer,

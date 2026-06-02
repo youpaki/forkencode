@@ -63,7 +63,18 @@ export const MergeTool = Tool.define(
             },
           })
 
-          const branchManager = Option.getOrThrow(branchManagerOpt)
+          if (Option.isNone(branchManagerOpt)) {
+            return {
+              title: "Merge unavailable",
+              metadata: {
+                mergeID: "unavailable" as MergeID,
+                targetBranchID: "unavailable" as BranchID,
+                sourceBranchIDs: [] as BranchID[],
+              },
+              output: "Merging is not available — BranchManager is not loaded.",
+            } satisfies Tool.ExecuteResult
+          }
+          const branchManager = branchManagerOpt.value
 
           const session = yield* sessions.get(ctx.sessionID).pipe(Effect.orDie)
           const convKey = "forkencode.conversationID"
