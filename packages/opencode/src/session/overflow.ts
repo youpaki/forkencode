@@ -1,5 +1,5 @@
 import type { Config } from "@/config/config"
-import { SessionLegacy } from "@opencode-ai/core/session/legacy"
+import { SessionLegacy } from "@forkencode/core/session/legacy"
 import type { Provider } from "@/provider/provider"
 import { ProviderTransform } from "@/provider/transform"
 import type { MessageV2 } from "./message-v2"

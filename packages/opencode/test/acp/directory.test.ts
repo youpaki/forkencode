@@ -1,7 +1,7 @@
 import { describe, expect } from "bun:test"
 import { Directory } from "@/acp/directory"
 import { Command } from "@/command"
-import { ProviderV2 } from "@opencode-ai/core/provider"
+import { ProviderV2 } from "@forkencode/core/provider"
 import { Provider } from "@/provider/provider"
 import { Effect, Layer } from "effect"
 import { it } from "../lib/effect"

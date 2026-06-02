@@ -13,11 +13,11 @@ export interface BranchItem {
 export interface BranchListProps extends ComponentProps<"div"> {
   branches: BranchItem[]
   activeBranchID?: string
-  onSelect: (branchID: string) => void
+  onBranchSelect: (branchID: string) => void
 }
 
 export function BranchList(props: BranchListProps) {
-  const [split, rest] = splitProps(props, ["branches", "activeBranchID", "onSelect", "class", "classList", "children"])
+  const [split, rest] = splitProps(props, ["branches", "activeBranchID", "onBranchSelect", "class", "classList", "children"])
 
   const sorted = createMemo(() =>
     [...split.branches].sort((a, b) => {
@@ -46,7 +46,7 @@ export function BranchList(props: BranchListProps) {
             <BranchRow
               branch={branch}
               active={branch.id === split.activeBranchID}
-              onSelect={split.onSelect}
+              onBranchSelect={split.onBranchSelect}
             />
           )}
         </For>
@@ -55,7 +55,7 @@ export function BranchList(props: BranchListProps) {
   )
 }
 
-function BranchRow(props: { branch: BranchItem; active: boolean; onSelect: (id: string) => void }) {
+function BranchRow(props: { branch: BranchItem; active: boolean; onBranchSelect: (id: string) => void }) {
   const statusColor = createMemo(() => {
     switch (props.branch.status) {
       case "running": return "var(--icon-interactive-base)"
@@ -86,7 +86,7 @@ function BranchRow(props: { branch: BranchItem; active: boolean; onSelect: (id: 
       data-active={props.active ? "true" : "false"}
       data-status={props.branch.status}
       data-depth={props.branch.depth}
-      onClick={() => props.onSelect(props.branch.id)}
+      onClick={() => props.onBranchSelect(props.branch.id)}
       style={{ "padding-left": `${8 + props.branch.depth * 16}px` }}
     >
       <span data-slot="branch-row-dot" style={{ color: statusColor() }}>

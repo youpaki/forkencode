@@ -1,7 +1,7 @@
 import { EOL } from "os"
 import { Project } from "@/project/project"
-import * as Log from "@opencode-ai/core/util/log"
-import { makeRuntime } from "@opencode-ai/core/effect/runtime"
+import * as Log from "@forkencode/core/util/log"
+import { makeRuntime } from "@forkencode/core/effect/runtime"
 import { cmd } from "../cmd"
 
 const runtime = makeRuntime(Project.Service, Project.defaultLayer)

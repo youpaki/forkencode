@@ -1,5 +1,5 @@
-import { PermissionLegacy } from "@opencode-ai/core/permission/legacy"
-import { CrossSpawnSpawner } from "@opencode-ai/core/cross-spawn-spawner"
+import { PermissionLegacy } from "@forkencode/core/permission/legacy"
+import { CrossSpawnSpawner } from "@forkencode/core/cross-spawn-spawner"
 import { Cause, Effect, Exit, Layer } from "effect"
 import { afterEach, describe, expect } from "bun:test"
 import path from "path"

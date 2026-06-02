@@ -1,4 +1,4 @@
-import type { Part } from "@opencode-ai/sdk/v2"
+import type { Part } from "@forkencode/sdk/v2"
 import { Locale } from "@/util/locale"
 
 export function relativeTime(timestamp: number): string {

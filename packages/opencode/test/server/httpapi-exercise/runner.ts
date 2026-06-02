@@ -1,5 +1,5 @@
-import { Flag } from "@opencode-ai/core/flag/flag"
-import { SessionLegacy } from "@opencode-ai/core/session/legacy"
+import { Flag } from "@forkencode/core/flag/flag"
+import { SessionLegacy } from "@forkencode/core/session/legacy"
 import { Cause, Duration, Effect, Layer, Scope } from "effect"
 import { TestLLMServer } from "../../lib/llm-server"
 import type { Config } from "../../../src/config/config"
@@ -10,7 +10,7 @@ import { call, callAuthProbe } from "./backend"
 import { original } from "./environment"
 import { runtime } from "./runtime"
 import type { ActiveScenario, Options, ProjectOptions, Result, Scenario, ScenarioContext, SeededContext } from "./types"
-import { ProviderV2 } from "@opencode-ai/core/provider"
+import { ProviderV2 } from "@forkencode/core/provider"
 
 export function runScenario(options: Options) {
   return (scenario: Scenario) => {

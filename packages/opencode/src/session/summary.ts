@@ -1,5 +1,5 @@
 import { Effect, Layer, Context, Schema } from "effect"
-import { SessionLegacy } from "@opencode-ai/core/session/legacy"
+import { SessionLegacy } from "@forkencode/core/session/legacy"
 import { EventV2Bridge } from "@/event-v2-bridge"
 import { Snapshot } from "@/snapshot"
 import { Session } from "./session"

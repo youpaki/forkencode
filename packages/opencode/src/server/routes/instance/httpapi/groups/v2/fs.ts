@@ -1,5 +1,5 @@
-import { LocationFileSystem } from "@opencode-ai/core/location-filesystem"
-import { RelativePath } from "@opencode-ai/core/schema"
+import { LocationFileSystem } from "@forkencode/core/location-filesystem"
+import { RelativePath } from "@forkencode/core/schema"
 import { Schema } from "effect"
 import { HttpApiEndpoint, HttpApiGroup, OpenApi } from "effect/unstable/httpapi"
 import { V2Authorization } from "../../middleware/authorization"

@@ -1,5 +1,5 @@
 import { describe, expect } from "bun:test"
-import { SessionLegacy } from "@opencode-ai/core/session/legacy"
+import { SessionLegacy } from "@forkencode/core/session/legacy"
 import fs from "fs/promises"
 import path from "path"
 import { Effect, Layer } from "effect"
@@ -8,12 +8,12 @@ import { Session } from "@/session/session"
 import { SessionRevert } from "../../src/session/revert"
 import { MessageV2 } from "../../src/session/message-v2"
 import { Snapshot } from "../../src/snapshot"
-import * as Log from "@opencode-ai/core/util/log"
+import * as Log from "@forkencode/core/util/log"
 import { MessageID, PartID, SessionID } from "../../src/session/schema"
-import { CrossSpawnSpawner } from "@opencode-ai/core/cross-spawn-spawner"
+import { CrossSpawnSpawner } from "@forkencode/core/cross-spawn-spawner"
 import { provideTmpdirInstance } from "../fixture/fixture"
 import { testEffect } from "../lib/effect"
-import { ProviderV2 } from "@opencode-ai/core/provider"
+import { ProviderV2 } from "@forkencode/core/provider"
 
 void Log.init({ print: false })
 

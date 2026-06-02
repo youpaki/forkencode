@@ -1,4 +1,4 @@
-import { PermissionLegacy } from "@opencode-ai/core/permission/legacy"
+import { PermissionLegacy } from "@forkencode/core/permission/legacy"
 import type { Permission } from "../permission"
 import type { Agent } from "./agent"
 

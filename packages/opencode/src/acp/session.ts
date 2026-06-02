@@ -1,6 +1,6 @@
 import type { McpServer } from "@agentclientprotocol/sdk"
-import type { Message, Part } from "@opencode-ai/sdk/v2"
-import { ProviderV2 } from "@opencode-ai/core/provider"
+import type { Message, Part } from "@forkencode/sdk/v2"
+import { ProviderV2 } from "@forkencode/core/provider"
 import { Context, Effect, Layer, Ref } from "effect"
 import * as ACPError from "./error"
 

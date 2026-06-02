@@ -1,7 +1,7 @@
 import * as Tool from "./tool"
 import { Effect, Option, Schema } from "effect"
-import { BranchManager, BranchID, ConversationID, type InheritanceMode } from "@opencode-ai/core/branch/branch"
-import { ContextInheritanceEngine } from "@opencode-ai/core/context-inheritance/context-inheritance"
+import { BranchManager, BranchID, ConversationID, type InheritanceMode } from "@forkencode/core/branch/branch"
+import { ContextInheritanceEngine } from "@forkencode/core/context-inheritance/context-inheritance"
 import { Session } from "@/session/session"
 
 const id = "fork"

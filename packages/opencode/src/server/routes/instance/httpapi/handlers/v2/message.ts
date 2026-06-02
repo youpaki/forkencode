@@ -1,5 +1,5 @@
-import { SessionMessage } from "@opencode-ai/core/session/message"
-import { SessionV2 } from "@opencode-ai/core/session"
+import { SessionMessage } from "@forkencode/core/session/message"
+import { SessionV2 } from "@forkencode/core/session"
 import { Effect, Schema } from "effect"
 import * as DateTime from "effect/DateTime"
 import { HttpApiBuilder } from "effect/unstable/httpapi"

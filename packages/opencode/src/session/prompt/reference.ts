@@ -1,5 +1,5 @@
 import { Option, Schema } from "effect"
-import { SessionLegacy } from "@opencode-ai/core/session/legacy"
+import { SessionLegacy } from "@forkencode/core/session/legacy"
 import { MessageV2 } from "../message-v2"
 import { Reference } from "@/reference/reference"
 

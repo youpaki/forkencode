@@ -13,11 +13,11 @@ export interface BranchGraphNode {
 export interface BranchGraphProps extends ComponentProps<"div"> {
   nodes: BranchGraphNode[]
   activeBranchID?: string
-  onSelect: (branchID: string) => void
+  onBranchSelect: (branchID: string) => void
 }
 
 export function BranchGraph(props: BranchGraphProps) {
-  const [split, rest] = splitProps(props, ["nodes", "activeBranchID", "onSelect", "class", "classList", "children"])
+  const [split, rest] = splitProps(props, ["nodes", "activeBranchID", "onBranchSelect", "class", "classList", "children"])
 
   const roots = createMemo(() =>
     split.nodes.filter((n) => n.depth === 0),
@@ -43,7 +43,7 @@ export function BranchGraph(props: BranchGraphProps) {
               node={root}
               allNodes={split.nodes}
               activeBranchID={split.activeBranchID}
-              onSelect={split.onSelect}
+              onBranchSelect={split.onBranchSelect}
               depth={0}
             />
           )}
@@ -57,7 +57,7 @@ function GraphNode(props: {
   node: BranchGraphNode
   allNodes: BranchGraphNode[]
   activeBranchID?: string
-  onSelect: (branchID: string) => void
+  onBranchSelect: (branchID: string) => void
   depth: number
 }) {
   const isActive = createMemo(() => props.node.id === props.activeBranchID)
@@ -86,7 +86,7 @@ function GraphNode(props: {
         data-status={props.node.status}
         data-merge={props.node.isMergeTarget ? "true" : "false"}
         style={{ "padding-left": `${8 + props.depth * 20}px` }}
-        onClick={() => props.onSelect(props.node.id)}
+        onClick={() => props.onBranchSelect(props.node.id)}
       >
         <span data-slot="graph-node-connector">{connector()}</span>
         <span data-slot="graph-node-dot" style={{ color: statusColor() }}>&#x25CF;</span>
@@ -105,7 +105,7 @@ function GraphNode(props: {
               node={child}
               allNodes={props.allNodes}
               activeBranchID={props.activeBranchID}
-              onSelect={props.onSelect}
+              onBranchSelect={props.onBranchSelect}
               depth={props.depth + 1}
             />
           )}

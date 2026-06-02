@@ -1,7 +1,7 @@
 import { describe, expect } from "bun:test"
 import type { McpServer } from "@agentclientprotocol/sdk"
 import { Effect } from "effect"
-import { ProviderV2 } from "@opencode-ai/core/provider"
+import { ProviderV2 } from "@forkencode/core/provider"
 import * as ACPError from "@/acp/error"
 import * as ACPSession from "@/acp/session"
 import { testEffect } from "../lib/effect"

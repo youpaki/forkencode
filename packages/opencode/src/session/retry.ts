@@ -1,5 +1,5 @@
-import type { NamedError } from "@opencode-ai/core/util/error"
-import { SessionLegacy } from "@opencode-ai/core/session/legacy"
+import type { NamedError } from "@forkencode/core/util/error"
+import { SessionLegacy } from "@forkencode/core/session/legacy"
 import { Cause, Clock, Duration, Effect, Schedule } from "effect"
 import { MessageV2 } from "./message-v2"
 import { iife } from "@/util/iife"

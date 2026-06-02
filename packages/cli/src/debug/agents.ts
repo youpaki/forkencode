@@ -1,10 +1,10 @@
 import { EOL } from "os"
-import { AgentV2 } from "@opencode-ai/core/agent"
-import { PluginBoot } from "@opencode-ai/core/plugin/boot"
+import { AgentV2 } from "@forkencode/core/agent"
+import { PluginBoot } from "@forkencode/core/plugin/boot"
 import * as Effect from "effect/Effect"
 import * as Command from "effect/unstable/cli/Command"
-import { LocationServiceMap } from "@opencode-ai/core/location-layer"
-import { AbsolutePath } from "@opencode-ai/core/schema"
+import { LocationServiceMap } from "@forkencode/core/location-layer"
+import { AbsolutePath } from "@forkencode/core/schema"
 
 export const AgentsCommand = Command.make("agents", {}, () =>
   Effect.gen(function* () {

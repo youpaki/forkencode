@@ -1,7 +1,7 @@
 import type { ContentBlock, ContentChunk, ResourceLink, Role } from "@agentclientprotocol/sdk"
 import path from "node:path"
 import { pathToFileURL } from "node:url"
-import { SessionLegacy } from "@opencode-ai/core/session/legacy"
+import { SessionLegacy } from "@forkencode/core/session/legacy"
 
 export type PromptPart = SessionLegacy.TextPartInput | SessionLegacy.FilePartInput
 

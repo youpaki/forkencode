@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test"
 import type { SessionNotification } from "@agentclientprotocol/sdk"
-import { ProviderV2 } from "@opencode-ai/core/provider"
+import { ProviderV2 } from "@forkencode/core/provider"
 import { UsageService } from "@/acp/usage"
 import { Provider } from "@/provider/provider"
 import { Effect, Layer } from "effect"

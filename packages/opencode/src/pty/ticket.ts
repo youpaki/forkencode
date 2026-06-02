@@ -1,9 +1,9 @@
 export * as PtyTicket from "./ticket"
 
-import { WorkspaceV2 } from "@opencode-ai/core/workspace"
+import { WorkspaceV2 } from "@forkencode/core/workspace"
 import { InstanceRef, WorkspaceRef } from "@/effect/instance-ref"
 import { PtyID } from "@/pty/schema"
-import { PositiveInt } from "@opencode-ai/core/schema"
+import { PositiveInt } from "@forkencode/core/schema"
 import { Cache, Context, Duration, Effect, Layer, Schema } from "effect"
 
 const DEFAULT_TTL = Duration.seconds(60)

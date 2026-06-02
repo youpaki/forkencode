@@ -1,6 +1,6 @@
 import * as Tool from "./tool"
 import { DateTime, Effect, Option, Schema } from "effect"
-import { BranchManager, BranchID, MergeID, MergeInfo } from "@opencode-ai/core/branch/branch"
+import { BranchManager, BranchID, MergeID, MergeInfo } from "@forkencode/core/branch/branch"
 import { Session } from "@/session/session"
 
 const id = "merge"

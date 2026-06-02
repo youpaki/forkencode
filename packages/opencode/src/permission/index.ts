@@ -1,12 +1,12 @@
 import { ConfigPermission } from "@/config/permission"
 import { InstanceState } from "@/effect/instance-state"
-import * as Log from "@opencode-ai/core/util/log"
-import { Wildcard } from "@opencode-ai/core/util/wildcard"
+import * as Log from "@forkencode/core/util/log"
+import { Wildcard } from "@forkencode/core/util/wildcard"
 import { Deferred, Effect, Layer, Context } from "effect"
 import os from "os"
-import { PermissionLegacy } from "@opencode-ai/core/permission/legacy"
+import { PermissionLegacy } from "@forkencode/core/permission/legacy"
 import { EventV2Bridge } from "@/event-v2-bridge"
-import { EventV2 } from "@opencode-ai/core/event"
+import { EventV2 } from "@forkencode/core/event"
 
 const log = Log.create({ service: "permission" })
 

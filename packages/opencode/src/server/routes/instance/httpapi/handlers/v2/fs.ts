@@ -1,4 +1,4 @@
-import { LocationFileSystem } from "@opencode-ai/core/location-filesystem"
+import { LocationFileSystem } from "@forkencode/core/location-filesystem"
 import { Effect } from "effect"
 import { HttpApiBuilder } from "effect/unstable/httpapi"
 import { InstanceHttpApi } from "../../api"

@@ -1,6 +1,6 @@
 import { describe, expect } from "bun:test"
 import { Effect, Layer } from "effect"
-import { WorkspaceV2 } from "@opencode-ai/core/workspace"
+import { WorkspaceV2 } from "@forkencode/core/workspace"
 import { PtyID } from "../../src/pty/schema"
 import { PtyTicket } from "../../src/pty/ticket"
 import { testEffect } from "../lib/effect"

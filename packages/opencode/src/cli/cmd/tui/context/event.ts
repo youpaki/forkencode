@@ -1,5 +1,5 @@
-import type { Event } from "@opencode-ai/sdk/v2"
-import * as Log from "@opencode-ai/core/util/log"
+import type { Event } from "@forkencode/sdk/v2"
+import * as Log from "@forkencode/core/util/log"
 import { useProject } from "./project"
 import { useSDK } from "./sdk"
 

@@ -116,8 +116,8 @@ const { EventV2Bridge } = await import("../../src/event-v2-bridge")
 const { Config } = await import("../../src/config/config")
 const { McpAuth } = await import("../../src/mcp/auth")
 const { McpOAuthProvider } = await import("../../src/mcp/oauth-provider")
-const { AppFileSystem } = await import("@opencode-ai/core/filesystem")
-const { CrossSpawnSpawner } = await import("@opencode-ai/core/cross-spawn-spawner")
+const { AppFileSystem } = await import("@forkencode/core/filesystem")
+const { CrossSpawnSpawner } = await import("@forkencode/core/cross-spawn-spawner")
 
 const mcpTest = testEffect(
   Layer.mergeAll(
