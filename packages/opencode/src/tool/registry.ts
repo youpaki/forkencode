@@ -8,6 +8,7 @@ import { GrepTool } from "./grep"
 import { ReadTool } from "./read"
 import { TaskTool } from "./task"
 import { ForkTool } from "./fork"
+import { MergeTool } from "./merge"
 import { Database } from "@opencode-ai/core/database/database"
 import { TodoWriteTool } from "./todo"
 import { WebFetchTool } from "./webfetch"
@@ -119,6 +120,7 @@ export const layer: Layer.Layer<
     const invalid = yield* InvalidTool
     const task = yield* TaskTool
     const fork = yield* ForkTool
+    const merge = yield* MergeTool
     const read = yield* ReadTool
     const question = yield* QuestionTool
     const todo = yield* TodoWriteTool
@@ -233,6 +235,7 @@ export const layer: Layer.Layer<
           write: Tool.init(writetool),
           task: Tool.init(task),
           fork: Tool.init(fork),
+          merge: Tool.init(merge),
           fetch: Tool.init(webfetch),
           todo: Tool.init(todo),
           search: Tool.init(websearch),
@@ -256,6 +259,7 @@ export const layer: Layer.Layer<
             tool.write,
             tool.task,
             tool.fork,
+            tool.merge,
             tool.fetch,
             tool.todo,
             tool.search,
