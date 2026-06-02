@@ -7,6 +7,7 @@ import { NonNegativeInt, withStatics } from "../schema"
 import { ModelV2 } from "../model"
 import { ProjectV2 } from "../project"
 import {
+  BranchMessageTable,
   BranchRelationshipTable,
   BranchTable,
   ConversationTable,
@@ -14,6 +15,7 @@ import {
 } from "./sql"
 
 export * as Branch from "./branch"
+export * as BranchManager from "./branch"
 export * as Conversation from "./branch"
 export * as Merge from "./branch"
 export * as Checkpoint from "./branch"
@@ -157,6 +159,14 @@ export class ForkPlanInfo extends Schema.Class<ForkPlanInfo>("ForkPlan.Info")({
   time: V2Schema.DateTimeUtcFromMillis,
 }) {}
 
+export class BranchMessage extends Schema.Class<BranchMessage>("Branch.Message")({
+  id: Schema.String,
+  branchID: BranchID,
+  type: Schema.String,
+  data: Schema.Record(Schema.String, Schema.Unknown),
+  timeCreated: V2Schema.DateTimeUtcFromMillis,
+}) {}
+
 export interface Interface {
   readonly createConversation: (input: {
     projectID: string
@@ -194,6 +204,13 @@ export interface Interface {
   readonly setBranchSummary: (id: BranchID, summary: string) => Effect.Effect<void>
 
   readonly archiveBranch: (id: BranchID) => Effect.Effect<void>
+
+  readonly addMessage: (message: BranchMessage) => Effect.Effect<void>
+
+  readonly getMessages: (
+    branchID: BranchID,
+    options?: { limit?: number },
+  ) => Effect.Effect<BranchMessage[]>
 
   readonly getAncestors: (branchID: BranchID) => Effect.Effect<BranchInfo[]>
 
@@ -456,6 +473,39 @@ export const layer = Layer.effect(
           .where(eq(BranchTable.id, id))
           .run()
           .pipe(Effect.orDie)
+      }),
+
+      addMessage: Effect.fn("BranchManager.addMessage")(function* (message) {
+        yield* db.db.insert(BranchMessageTable).values({
+          id: message.id,
+          branch_id: message.branchID as BranchID,
+          type: message.type,
+          data: message.data as Record<string, unknown>,
+          time_created: DateTime.toEpochMillis(message.timeCreated),
+        }).run().pipe(Effect.orDie)
+      }),
+
+      getMessages: Effect.fn("BranchManager.getMessages")(function* (branchID, options) {
+        const baseQuery = db.db
+          .select()
+          .from(BranchMessageTable)
+          .where(eq(BranchMessageTable.branch_id, branchID))
+          .orderBy(BranchMessageTable.time_created)
+
+        const rows = yield* (options?.limit != null
+          ? baseQuery.limit(options.limit).all()
+          : baseQuery.all()
+        ).pipe(Effect.orDie)
+        return rows.map(
+          (row) =>
+            new BranchMessage({
+              id: row.id,
+              branchID: row.branch_id as BranchID,
+              type: row.type,
+              data: row.data as Record<string, unknown>,
+              timeCreated: DateTime.makeUnsafe(row.time_created),
+            }),
+        )
       }),
 
       getAncestors: Effect.fn("BranchManager.getAncestors")(function* (branchID) {

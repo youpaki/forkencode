@@ -130,6 +130,24 @@ export const ContextSnapshotTable = sqliteTable(
   (table) => [index("cs_branch_idx").on(table.branch_id)],
 )
 
+export const BranchMessageTable = sqliteTable(
+  "branch_message",
+  {
+    id: text().primaryKey(),
+    branch_id: text()
+      .$type<BranchID>()
+      .notNull()
+      .references(() => BranchTable.id, { onDelete: "cascade" }),
+    type: text().notNull(),
+    data: text({ mode: "json" }).notNull(),
+    time_created: integer().notNull(),
+  },
+  (table) => [
+    index("bmsg_branch_idx").on(table.branch_id),
+    index("bmsg_time_idx").on(table.time_created),
+  ],
+)
+
 export const ForkPlanTable = sqliteTable(
   "fork_plan",
   {

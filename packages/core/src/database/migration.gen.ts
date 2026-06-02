@@ -27,5 +27,6 @@ export const migrations = (
     import("./migration/20260601202201_amazing_prowler"),
     import("./migration/20260602002951_lowly_union_jack"),
     import("./migration/20260602004500_conversation_graph"),
+    import("./migration/20260602004800_branch_message"),
   ])
 ).map((module) => module.default) satisfies DatabaseMigration.Migration[]
