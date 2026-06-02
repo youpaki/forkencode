@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-APP=opencode
+APP=forkencode
 
 MUTED='\033[0;2m'
 RED='\033[0;31m'
@@ -20,8 +20,8 @@ Options:
         --no-modify-path    Don't modify shell config files (.zshrc, .bashrc, etc.)
 
 Examples:
-    curl -fsSL https://opencode.ai/install | bash
-    curl -fsSL https://opencode.ai/install | bash -s -- --version 1.0.180
+    curl -fsSL https://forkencode/install | bash
+    curl -fsSL https://forkencode/install | bash -s -- --version 1.0.180
     ./install --binary /path/to/opencode
 EOF
 }
@@ -65,7 +65,7 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-INSTALL_DIR=$HOME/.opencode/bin
+INSTALL_DIR=$HOME/.forkencode/bin
 mkdir -p "$INSTALL_DIR"
 
 # If --binary is provided, skip all download/detection logic
@@ -220,7 +220,7 @@ print_message() {
 
 check_version() {
     if command -v opencode >/dev/null 2>&1; then
-        opencode_path=$(which opencode)
+        forkencode_path=$(which forkencode)
 
         ## Check the installed version
         installed_version=$(opencode --version 2>/dev/null || echo "")
@@ -275,7 +275,7 @@ download_with_progress() {
     fi
 
     local tmp_dir=${TMPDIR:-/tmp}
-    local basename="${tmp_dir}/opencode_install_$$"
+    local basename="${tmp_dir}/forkencode_install_$$"
     local tracefile="${basename}.trace"
 
     rm -f "$tracefile"
@@ -326,7 +326,7 @@ download_with_progress() {
 
 download_and_install() {
     print_message info "\n${MUTED}Installing ${NC}opencode ${MUTED}version: ${NC}$specific_version"
-    local tmp_dir="${TMPDIR:-/tmp}/opencode_install_$$"
+    local tmp_dir="${TMPDIR:-/tmp}/forkencode_install_$$"
     mkdir -p "$tmp_dir"
 
     if [[ "$os" == "windows" ]] || ! [ -t 2 ] || ! download_with_progress "$url" "$tmp_dir/$filename"; then

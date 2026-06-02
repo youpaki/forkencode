@@ -13,7 +13,7 @@
     "typecheck": "tsgo --noEmit"
   },
   "bin": {
-    "opencode": "./bin/opencode"
+    "forkencode": "./bin/forkencode"
   },
   "exports": {
     "./*": "./src/*.ts"
